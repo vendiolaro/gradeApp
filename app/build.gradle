@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 32
+    packagingOptions {
+        pickFirst  'META-INF/*'
+    }
+    defaultConfig {
+        applicationId "com.example.gradeapp"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    implementation 'org.apache.mina:mina-core:3.0.0-M2'
+
+    implementation 'org.apache.sshd:sshd-core:2.1.0'
+
+    implementation 'org.apache.sshd:sshd-putty:2.1.0'
+
+    implementation 'org.apache.sshd:sshd-common:2.1.0'
+
+    implementation 'org.slf4j:slf4j-api:1.7.5'
+
+    implementation 'org.slf4j:slf4j-simple:1.6.4'
+    // https://mavenlibs.com/maven/dependency/com.jcraft/jsch
+    implementation 'com.jcraft:jsch:0.1.55'
+}
